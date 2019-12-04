@@ -29,6 +29,7 @@ import org.apache.dubbo.rpc.cluster.LoadBalance;
 import java.util.List;
 
 /**
+ * failsafe 路由调用，记录错误日志，忽略错误并返回空结果
  * When invoke fails, log the error message and ignore this error by returning an empty Result.
  * Usually used to write audit logs and other operations
  *

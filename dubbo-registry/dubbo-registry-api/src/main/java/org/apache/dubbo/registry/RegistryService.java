@@ -21,6 +21,7 @@ import org.apache.dubbo.common.URL;
 import java.util.List;
 
 /**
+ * 注册服务
  * RegistryService. (SPI, Prototype, ThreadSafe)
  *
  * @see org.apache.dubbo.registry.Registry

@@ -37,6 +37,7 @@ import static org.apache.dubbo.common.constants.CommonConstants.DEFAULT_TIMEOUT;
 import static org.apache.dubbo.common.constants.CommonConstants.TIMEOUT_KEY;
 
 /**
+ * {@code ExchangeChannel} 的默认实现
  * ExchangeReceiver
  */
 final class HeaderExchangeChannel implements ExchangeChannel {

@@ -33,6 +33,7 @@ import static org.apache.dubbo.common.constants.CommonConstants.COMMA_SPLIT_PATT
 import static org.apache.dubbo.rpc.Constants.INTERFACES;
 
 /**
+ * {@code ProxyFactory} 代理工厂的抽象实现
  * AbstractProxyFactory
  */
 public abstract class AbstractProxyFactory implements ProxyFactory {

@@ -40,6 +40,7 @@ import java.util.concurrent.locks.ReentrantLock;
 import static org.apache.dubbo.common.constants.CommonConstants.INTERFACE_KEY;
 
 /**
+ * {@code MonitorFactory} 的抽象实现
  * AbstractMonitorFactory. (SPI, Singleton, ThreadSafe)
  */
 public abstract class AbstractMonitorFactory implements MonitorFactory {

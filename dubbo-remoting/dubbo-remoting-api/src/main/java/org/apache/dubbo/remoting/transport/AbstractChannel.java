@@ -23,7 +23,7 @@ import org.apache.dubbo.remoting.RemotingException;
 import org.apache.dubbo.remoting.utils.PayloadDropper;
 
 /**
- * AbstractChannel
+ * AbstractChannel 通道的抽象实现
  */
 public abstract class AbstractChannel extends AbstractPeer implements Channel {
 

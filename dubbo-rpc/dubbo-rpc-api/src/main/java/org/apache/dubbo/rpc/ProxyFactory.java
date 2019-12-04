@@ -23,6 +23,7 @@ import org.apache.dubbo.common.extension.SPI;
 import static org.apache.dubbo.rpc.Constants.PROXY_KEY;
 
 /**
+ * 代理工厂
  * ProxyFactory. (API/SPI, Singleton, ThreadSafe)
  */
 @SPI("javassist")

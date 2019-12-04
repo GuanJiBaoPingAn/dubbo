@@ -47,6 +47,7 @@ import static org.apache.dubbo.rpc.cluster.Constants.DEFAULT_CLUSTER_AVAILABLE_C
 import static org.apache.dubbo.rpc.cluster.Constants.DEFAULT_CLUSTER_STICKY;
 
 /**
+ * 抽象路由调用
  * AbstractClusterInvoker
  */
 public abstract class AbstractClusterInvoker<T> implements Invoker<T> {
@@ -57,6 +58,7 @@ public abstract class AbstractClusterInvoker<T> implements Invoker<T> {
 
     protected boolean availablecheck;
 
+    /** 该路由是否已被销毁 */
     private AtomicBoolean destroyed = new AtomicBoolean(false);
 
     private volatile Invoker<T> stickyInvoker = null;
@@ -109,6 +111,9 @@ public abstract class AbstractClusterInvoker<T> implements Invoker<T> {
     }
 
     /**
+     * 通过给定负载均衡策略选择调用者
+     * 1、首先根据负载均衡选择一个调用者。如果该调用者在已被选择列表中或调用者不存在，则继续步骤2。
+     * 2、重新进行选择，重选保证调用者可用
      * Select a invoker using loadbalance policy.</br>
      * a) Firstly, select an invoker using loadbalance. If this invoker is in previously selected list, or,
      * if this invoker is unavailable, then continue step b (reselect), otherwise return the first selected invoker</br>

@@ -124,9 +124,10 @@ public class ExecutorUtil {
     }
 
     /**
+     * 在url 中增加线程名称
      * append thread name with url address
      *
-     * @return new url with updated thread name
+     * @return new url with updated thread name 返回增加了线程名称的url
      */
     public static URL setThreadName(URL url, String defaultName) {
         String name = url.getParameter(THREAD_NAME_KEY, defaultName);

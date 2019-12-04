@@ -30,6 +30,7 @@ import static java.util.Collections.unmodifiableSortedSet;
 import static java.util.stream.StreamSupport.stream;
 
 /**
+ * 元数据服务。定义了Dubbo 服务提供者和消费者在服务注册订阅之间的协议。
  * A framework interface of Dubbo Metadata Service defines the contract of Dubbo Services registartion and subscription
  * between Dubbo service providers and its consumers. The implementation will be exported as a normal Dubbo service that
  * the clients would subscribe, whose version comes from the {@link #version()} method and group gets from

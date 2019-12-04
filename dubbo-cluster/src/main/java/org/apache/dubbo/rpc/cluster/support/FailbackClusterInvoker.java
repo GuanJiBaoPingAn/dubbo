@@ -41,6 +41,7 @@ import static org.apache.dubbo.rpc.cluster.Constants.DEFAULT_FAILBACK_TASKS;
 import static org.apache.dubbo.rpc.cluster.Constants.FAIL_BACK_TASKS_KEY;
 
 /**
+ * fail-back 路由调用。当调用失败时，记录失败请求定时进行重新尝试。用于通知服务。
  * When fails, record failure requests and schedule for retry on a regular interval.
  * Especially useful for services of notification.
  *

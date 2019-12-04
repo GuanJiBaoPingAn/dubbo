@@ -21,6 +21,9 @@ import org.apache.dubbo.common.extension.ExtensionLoader;
 import org.apache.dubbo.rpc.cluster.Router;
 import org.apache.dubbo.rpc.cluster.governance.GovernanceRuleRepository;
 
+/**
+ * {@code Router} 的抽象实现
+ */
 public abstract class AbstractRouter implements Router {
     protected int priority = DEFAULT_PRIORITY;
     protected boolean force = false;

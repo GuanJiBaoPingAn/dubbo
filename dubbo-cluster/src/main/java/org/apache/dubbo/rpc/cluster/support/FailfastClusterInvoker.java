@@ -28,6 +28,7 @@ import org.apache.dubbo.rpc.cluster.LoadBalance;
 import java.util.List;
 
 /**
+ * fail-fast 路由调用。只会执行一次，在调用错误时立即抛出异常，一般用于非幂等写操作
  * Execute exactly once, which means this policy will throw an exception immediately in case of an invocation error.
  * Usually used for non-idempotent write operations
  *

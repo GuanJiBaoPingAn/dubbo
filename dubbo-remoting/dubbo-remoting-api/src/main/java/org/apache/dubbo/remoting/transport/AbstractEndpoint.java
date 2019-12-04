@@ -31,7 +31,7 @@ import static org.apache.dubbo.common.constants.CommonConstants.DEFAULT_TIMEOUT;
 import static org.apache.dubbo.common.constants.CommonConstants.TIMEOUT_KEY;
 
 /**
- * AbstractEndpoint
+ * AbstractEndpoint 端点的抽象基类
  */
 public abstract class AbstractEndpoint extends AbstractPeer implements Resetable {
 
@@ -60,6 +60,10 @@ public abstract class AbstractEndpoint extends AbstractPeer implements Resetable
         }
     }
 
+    /**
+     * 解析给定{@code url} 解析url 中参数，若有则赋值没有则用默认值
+     * @param url
+     */
     @Override
     public void reset(URL url) {
         if (isClosed()) {

@@ -22,6 +22,7 @@ import java.net.InetSocketAddress;
 import java.util.Collection;
 
 /**
+ * 交换服务器
  * ExchangeServer. (API/SPI, Prototype, ThreadSafe)
  */
 public interface ExchangeServer extends RemotingServer {

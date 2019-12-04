@@ -42,6 +42,7 @@ import static org.apache.dubbo.remoting.Constants.DEFAULT_IDLE_TIMEOUT;
 import static org.apache.dubbo.remoting.Constants.IDLE_TIMEOUT_KEY;
 
 /**
+ * RemotingServer 的抽象基类
  * AbstractServer
  */
 public abstract class AbstractServer extends AbstractEndpoint implements RemotingServer {

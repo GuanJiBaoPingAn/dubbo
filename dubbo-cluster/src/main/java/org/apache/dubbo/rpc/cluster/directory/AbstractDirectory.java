@@ -36,6 +36,7 @@ import static org.apache.dubbo.common.constants.CommonConstants.MONITOR_KEY;
 import static org.apache.dubbo.rpc.cluster.Constants.REFER_KEY;
 
 /**
+ * Directory 的抽象实现：list 方法返回的Invoker 列表是被路由过滤的
  * Abstract implementation of Directory: Invoker list returned from this Directory's list method have been filtered by Routers
  *
  */

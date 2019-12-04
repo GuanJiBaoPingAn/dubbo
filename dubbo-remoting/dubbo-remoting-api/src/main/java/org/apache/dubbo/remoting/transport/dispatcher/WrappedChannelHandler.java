@@ -31,6 +31,9 @@ import org.apache.dubbo.remoting.transport.ChannelHandlerDelegate;
 
 import java.util.concurrent.ExecutorService;
 
+/**
+ * ChannelHandler 的包装类
+ */
 public class WrappedChannelHandler implements ChannelHandlerDelegate {
 
     protected static final Logger logger = LoggerFactory.getLogger(WrappedChannelHandler.class);

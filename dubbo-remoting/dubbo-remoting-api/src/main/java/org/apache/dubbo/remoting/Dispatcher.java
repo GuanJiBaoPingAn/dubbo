@@ -22,12 +22,14 @@ import org.apache.dubbo.common.extension.SPI;
 import org.apache.dubbo.remoting.transport.dispatcher.all.AllDispatcher;
 
 /**
+ * ChannelHandlerWrapper 的分发
  * ChannelHandlerWrapper (SPI, Singleton, ThreadSafe)
  */
 @SPI(AllDispatcher.NAME)
 public interface Dispatcher {
 
     /**
+     * 将消息分发到线程池
      * dispatch the message to threadpool.
      *
      * @param handler

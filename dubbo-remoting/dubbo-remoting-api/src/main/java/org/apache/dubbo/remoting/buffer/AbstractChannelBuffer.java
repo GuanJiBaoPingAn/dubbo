@@ -22,6 +22,9 @@ import java.io.InputStream;
 import java.io.OutputStream;
 import java.nio.ByteBuffer;
 
+/**
+ * {@code ChannelBuffer} 的抽象实现
+ */
 public abstract class AbstractChannelBuffer implements ChannelBuffer {
 
     private int readerIndex;

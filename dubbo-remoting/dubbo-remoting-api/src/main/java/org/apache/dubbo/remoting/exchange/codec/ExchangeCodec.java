@@ -42,6 +42,7 @@ import java.io.IOException;
 import java.io.InputStream;
 
 /**
+ * 交换层编解码器
  * ExchangeCodec.
  */
 public class ExchangeCodec extends TelnetCodec {

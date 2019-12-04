@@ -21,6 +21,7 @@ import java.lang.reflect.Type;
 import java.util.Map;
 
 /**
+ * 对象输入接口
  * Object input interface.
  */
 public interface ObjectInput extends DataInput {

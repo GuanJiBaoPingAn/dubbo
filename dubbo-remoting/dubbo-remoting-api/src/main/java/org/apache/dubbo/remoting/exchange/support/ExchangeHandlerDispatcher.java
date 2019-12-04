@@ -28,6 +28,7 @@ import org.apache.dubbo.remoting.transport.ChannelHandlerDispatcher;
 import java.util.concurrent.CompletableFuture;
 
 /**
+ * 交换层操作分发器
  * ExchangeHandlerDispatcher
  */
 public class ExchangeHandlerDispatcher implements ExchangeHandler {

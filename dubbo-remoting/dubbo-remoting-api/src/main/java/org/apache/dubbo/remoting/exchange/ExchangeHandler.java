@@ -23,6 +23,7 @@ import org.apache.dubbo.remoting.telnet.TelnetHandler;
 import java.util.concurrent.CompletableFuture;
 
 /**
+ * 交换层操作器
  * ExchangeHandler. (API, Prototype, ThreadSafe)
  */
 public interface ExchangeHandler extends ChannelHandler, TelnetHandler {

@@ -22,6 +22,7 @@ import java.net.InetSocketAddress;
 import java.util.Collection;
 
 /**
+ * 远程服务器
  * Remoting Server. (API/SPI, Prototype, ThreadSafe)
  * <p>
  * <a href="http://en.wikipedia.org/wiki/Client%E2%80%93server_model">Client/Server</a>

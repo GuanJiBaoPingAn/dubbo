@@ -30,7 +30,7 @@ import java.util.function.Function;
 
 /**
  * (API, Prototype, NonThreadSafe)
- *
+ * RPC 调用结果{@link Result}
  * An RPC {@link Result}.
  *
  * Known implementations are:

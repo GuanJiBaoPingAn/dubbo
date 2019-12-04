@@ -17,6 +17,7 @@
 package org.apache.dubbo.common.config.configcenter;
 
 /**
+ * 配置变化类型，新增、修改、删除
  * Config change event type
  */
 public enum ConfigChangeType {

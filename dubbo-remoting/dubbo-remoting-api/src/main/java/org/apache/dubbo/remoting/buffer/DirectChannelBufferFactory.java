@@ -19,6 +19,9 @@ package org.apache.dubbo.remoting.buffer;
 
 import java.nio.ByteBuffer;
 
+/**
+ * 直接通道缓存工厂
+ */
 public class DirectChannelBufferFactory implements ChannelBufferFactory {
 
     private static final DirectChannelBufferFactory INSTANCE = new DirectChannelBufferFactory();

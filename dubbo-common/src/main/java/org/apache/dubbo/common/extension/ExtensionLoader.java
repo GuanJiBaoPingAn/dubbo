@@ -61,6 +61,11 @@ import static org.apache.dubbo.common.constants.CommonConstants.REMOVE_VALUE_PRE
  * at present designed to be singleton or static (by itself totally static or uses some static fields).
  * So the instances returned from them are of process or classloader scope. If you want to support
  * multiple dubbo servers in a single process, you may need to refactor these three classes.
+ *
+ * 拓展加载器
+ * 1、自动注入依赖拓展
+ * 2、自动包装
+ * 3、
  * <p>
  * Load dubbo extensions
  * <ul>
@@ -86,12 +91,15 @@ public class ExtensionLoader<T> {
 
     private static final Pattern NAME_SEPARATOR = Pattern.compile("\\s*[,]+\\s*");
 
+    /** 类 -> 拓展加载器的缓存 */
     private static final ConcurrentMap<Class<?>, ExtensionLoader<?>> EXTENSION_LOADERS = new ConcurrentHashMap<>();
 
     private static final ConcurrentMap<Class<?>, Object> EXTENSION_INSTANCES = new ConcurrentHashMap<>();
 
+    /** 该拓展加载器的类型 */
     private final Class<?> type;
 
+    /** 拓展工厂类 */
     private final ExtensionFactory objectFactory;
 
     private final ConcurrentMap<Class<?>, String> cachedNames = new ConcurrentHashMap<>();
@@ -99,9 +107,17 @@ public class ExtensionLoader<T> {
     private final Holder<Map<String, Class<?>>> cachedClasses = new Holder<>();
 
     private final Map<String, Object> cachedActivates = new ConcurrentHashMap<>();
+
+    /** 名称 -> 值 的缓存 */
     private final ConcurrentMap<String, Holder<Object>> cachedInstances = new ConcurrentHashMap<>();
+
+    /** 自适应实例缓存 */
     private final Holder<Object> cachedAdaptiveInstance = new Holder<>();
+
+    /** 自适应类缓存 */
     private volatile Class<?> cachedAdaptiveClass = null;
+
+    /** 默认名称 */
     private String cachedDefaultName;
     private volatile Throwable createAdaptiveInstanceError;
 
@@ -118,6 +134,12 @@ public class ExtensionLoader<T> {
         return type.isAnnotationPresent(SPI.class);
     }
 
+    /**
+     * 根据给定类型获取拓展加载器，先取缓存，若没有则为该类型新建拓展加载器并进行缓存
+     * @param type
+     * @param <T>
+     * @return
+     */
     @SuppressWarnings("unchecked")
     public static <T> ExtensionLoader<T> getExtensionLoader(Class<T> type) {
         if (type == null) {
@@ -166,6 +188,10 @@ public class ExtensionLoader<T> {
         });
     }
 
+    /**
+     * 同Spring 的{@link org.springframework.util.ClassUtils#getDefaultClassLoader()}
+     * @return
+     */
     private static ClassLoader findClassLoader() {
         return ClassUtils.getClassLoader(ExtensionLoader.class);
     }
@@ -218,6 +244,7 @@ public class ExtensionLoader<T> {
     }
 
     /**
+     * 获取激活的拓展
      * Get activate extensions.
      *
      * @param url    url
@@ -374,6 +401,7 @@ public class ExtensionLoader<T> {
 //    }
 
     /**
+     * 根据给定名称获取拓展，没有时抛出异常
      * Find the extension with the given name. If the specified name is not found, then {@link IllegalStateException}
      * will be thrown.
      */
@@ -410,6 +438,7 @@ public class ExtensionLoader<T> {
     }
 
     /**
+     * 返回默认拓展，未配置时返回null
      * Return default extension, return <code>null</code> if it's not configured.
      */
     public T getDefaultExtension() {
@@ -619,6 +648,11 @@ public class ExtensionLoader<T> {
         return getExtensionClasses().containsKey(name);
     }
 
+    /**
+     * 注入拓展实例
+     * @param instance
+     * @return
+     */
     private T injectExtension(T instance) {
 
         if (objectFactory == null) {
@@ -667,6 +701,7 @@ public class ExtensionLoader<T> {
     }
 
     /**
+     * 返回setter 方法的属性名称，如setVersion 返回 version
      * get properties name for setter, for instance: setVersion, return "version"
      * <p>
      * return "", if setter name with length less than 3
@@ -676,6 +711,7 @@ public class ExtensionLoader<T> {
     }
 
     /**
+     * 返回给定方法是否为setter 方法
      * return true if and only if:
      * <p>
      * 1, public
@@ -959,6 +995,10 @@ public class ExtensionLoader<T> {
         }
     }
 
+    /**
+     * 获取或创建自适应拓展类
+     * @return
+     */
     private Class<?> getAdaptiveExtensionClass() {
         getExtensionClasses();
         if (cachedAdaptiveClass != null) {
@@ -967,6 +1007,10 @@ public class ExtensionLoader<T> {
         return cachedAdaptiveClass = createAdaptiveExtensionClass();
     }
 
+    /**
+     * 创建自适应拓展类
+     * @return
+     */
     private Class<?> createAdaptiveExtensionClass() {
         String code = new AdaptiveClassCodeGenerator(type, cachedDefaultName).generate();
         ClassLoader classLoader = findClassLoader();

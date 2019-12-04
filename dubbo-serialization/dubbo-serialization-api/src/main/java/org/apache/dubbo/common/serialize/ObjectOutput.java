@@ -20,6 +20,7 @@ import java.io.IOException;
 import java.util.Map;
 
 /**
+ * 对象输出接口
  * Object output interface.
  */
 public interface ObjectOutput extends DataOutput {

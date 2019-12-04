@@ -52,12 +52,14 @@ import static org.apache.dubbo.common.constants.CommonConstants.IO_THREADS_KEY;
 import static org.apache.dubbo.remoting.Constants.SSL_ENABLED_KEY;
 
 /**
+ * AbstractServer 的netty 实现
  * NettyServer.
  */
 public class NettyServer extends AbstractServer implements RemotingServer {
 
     private static final Logger logger = LoggerFactory.getLogger(NettyServer.class);
     /**
+     * 所有通道的缓存
      * the cache for alive worker channel.
      * <ip:port, dubbo channel>
      */

@@ -22,6 +22,7 @@ import org.apache.dubbo.common.logger.LoggerFactory;
 import org.apache.dubbo.remoting.Channel;
 
 /**
+ * 关闭定时任务
  * CloseTimerTask
  */
 public class CloseTimerTask extends AbstractTimerTask {

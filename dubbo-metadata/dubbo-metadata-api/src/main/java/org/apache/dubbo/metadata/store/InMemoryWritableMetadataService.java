@@ -48,6 +48,7 @@ import static org.apache.dubbo.common.utils.CollectionUtils.isEmpty;
 import static org.apache.dubbo.rpc.Constants.GENERIC_KEY;
 
 /**
+ * provider 使用。在输出时将元数据放入本地内存。
  * The {@link WritableMetadataService} implementation stores the metadata of Dubbo services in memory locally when they
  * exported. It is used by server (provider).
  *

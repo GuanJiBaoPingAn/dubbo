@@ -38,6 +38,7 @@ import java.util.concurrent.atomic.AtomicReference;
 import static org.apache.dubbo.common.constants.CommonConstants.DEFAULT_PROTOCOL;
 
 /**
+ * Monitor 的实现
  * DubboMonitor
  */
 public class DubboMonitor implements Monitor {
@@ -45,16 +46,19 @@ public class DubboMonitor implements Monitor {
     private static final Logger logger = LoggerFactory.getLogger(DubboMonitor.class);
 
     /**
+     * {@link statisticsMap} 中统计数据对应的数组长度
      * The length of the array which is a container of the statistics
      */
     private static final int LENGTH = 10;
 
     /**
+     * 用于定时发送统计数据
      * The timer for sending statistics
      */
     private final ScheduledExecutorService scheduledExecutorService = Executors.newScheduledThreadPool(3, new NamedThreadFactory("DubboMonitorSendTimer", true));
 
     /**
+     * 用于取消{@link scheduledExecutorService} 的回调
      * The future that can cancel the <b>scheduledExecutorService</b>
      */
     private final ScheduledFuture<?> sendFuture;
@@ -85,6 +89,9 @@ public class DubboMonitor implements Monitor {
         }, monitorInterval, monitorInterval, TimeUnit.MILLISECONDS);
     }
 
+    /**
+     * 监视器中统计数据的更新
+     */
     public void send() {
         logger.debug("Send statistics to monitor " + getUrl());
         String timestamp = String.valueOf(System.currentTimeMillis());
@@ -146,6 +153,10 @@ public class DubboMonitor implements Monitor {
         }
     }
 
+    /**
+     * 从给定的URL中搜集数据并更新到缓存中
+     * @param url
+     */
     @Override
     public void collect(URL url) {
         // data to collect from url

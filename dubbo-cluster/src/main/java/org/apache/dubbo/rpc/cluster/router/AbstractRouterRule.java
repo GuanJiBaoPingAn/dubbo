@@ -17,6 +17,7 @@
 package org.apache.dubbo.rpc.cluster.router;
 
 /**
+ * 路由规则抽象类
  * TODO Extract more code here if necessary
  */
 public abstract class AbstractRouterRule {

@@ -19,6 +19,7 @@ package org.apache.dubbo.remoting.exchange;
 import org.apache.dubbo.remoting.Client;
 
 /**
+ * 交换层客户端标识接口
  * ExchangeClient. (API/SPI, Prototype, ThreadSafe)
  *
  *

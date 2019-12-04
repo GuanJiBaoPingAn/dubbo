@@ -20,6 +20,7 @@
 package org.apache.dubbo.remoting;
 
 /**
+ * 表示客户端和服务端能否感知和处理空闲连接。如果服务器有该能力，将关闭连接。如果客户端有该能力，将发送心跳连接。
  * Indicate whether the implementation (for both server and client) has the ability to sense and handle idle connection.
  * If the server has the ability to handle idle connection, it should close the connection when it happens, and if
  * the client has the ability to handle idle connection, it should send the heartbeat to the server.

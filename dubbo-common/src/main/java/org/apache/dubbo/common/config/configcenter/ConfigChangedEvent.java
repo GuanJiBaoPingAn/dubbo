@@ -20,6 +20,7 @@ import java.util.EventObject;
 import java.util.Objects;
 
 /**
+ * 当配置变化时触发事件
  * An event raised when the config changed, immutable.
  *
  * @see ConfigChangeType

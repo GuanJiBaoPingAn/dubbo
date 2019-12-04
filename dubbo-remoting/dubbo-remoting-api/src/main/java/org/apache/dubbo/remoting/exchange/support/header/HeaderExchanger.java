@@ -26,6 +26,7 @@ import org.apache.dubbo.remoting.exchange.Exchanger;
 import org.apache.dubbo.remoting.transport.DecodeHandler;
 
 /**
+ * {@code Exchanger} 的默认实现
  * DefaultMessenger
  *
  *

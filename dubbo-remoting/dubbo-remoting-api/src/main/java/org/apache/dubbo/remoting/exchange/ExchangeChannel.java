@@ -23,6 +23,7 @@ import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.ExecutorService;
 
 /**
+ * 交换通道
  * ExchangeChannel. (API/SPI, Prototype, ThreadSafe)
  */
 public interface ExchangeChannel extends Channel {

@@ -24,6 +24,7 @@ import java.util.List;
 import static org.apache.dubbo.rpc.Constants.INPUT_KEY;
 import static org.apache.dubbo.rpc.Constants.OUTPUT_KEY;
 /**
+ * 监视器服务
  * MonitorService. (SPI, Prototype, ThreadSafe)
  */
 public interface MonitorService {
@@ -65,6 +66,7 @@ public interface MonitorService {
     String MAX_CONCURRENT = "max.concurrent";
 
     /**
+     * 从URL 中搜集监视器数据
      * Collect monitor data
      * 1. support invocation count: count://host/interface?application=foo&method=foo&provider=10.20.153.11:20880&success=12&failure=2&elapsed=135423423
      * 1.1 host,application,interface,group,version,method: record source host/application/interface/method

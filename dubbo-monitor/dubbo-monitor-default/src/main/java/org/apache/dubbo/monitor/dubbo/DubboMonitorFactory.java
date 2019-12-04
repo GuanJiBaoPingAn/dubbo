@@ -32,6 +32,7 @@ import static org.apache.dubbo.common.constants.CommonConstants.REFERENCE_FILTER
 import static org.apache.dubbo.remoting.Constants.CHECK_KEY;
 
 /**
+ * {@code AbstractMonitorFactory} 的默认实现
  * DefaultMonitorFactory
  */
 public class DubboMonitorFactory extends AbstractMonitorFactory {

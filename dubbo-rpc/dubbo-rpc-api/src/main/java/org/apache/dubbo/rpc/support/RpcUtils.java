@@ -49,6 +49,11 @@ public class RpcUtils {
     private static final Logger logger = LoggerFactory.getLogger(RpcUtils.class);
     private static final AtomicLong INVOKE_ID = new AtomicLong(0);
 
+    /**
+     * 根据给定的{@link invocation} 返回方法返回类型
+     * @param invocation
+     * @return
+     */
     public static Class<?> getReturnType(Invocation invocation) {
         try {
             if (invocation != null && invocation.getInvoker() != null
@@ -126,6 +131,11 @@ public class RpcUtils {
         }
     }
 
+    /**
+     * 根据给定的{@link invocation} 返回方法名称
+     * @param invocation
+     * @return
+     */
     public static String getMethodName(Invocation invocation) {
         if ($INVOKE.equals(invocation.getMethodName())
                 && invocation.getArguments() != null
@@ -146,6 +156,11 @@ public class RpcUtils {
         return invocation.getArguments();
     }
 
+    /**
+     * 根据给定的{@link invocation} 返回方法参数类型数组
+     * @param invocation
+     * @return
+     */
     public static Class<?>[] getParameterTypes(Invocation invocation) {
         if ($INVOKE.equals(invocation.getMethodName())
                 && invocation.getArguments() != null

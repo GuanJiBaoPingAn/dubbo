@@ -17,6 +17,7 @@
 package org.apache.dubbo.common;
 
 /**
+ * 节点
  * Node. (API/SPI, Prototype, ThreadSafe)
  */
 public interface Node {

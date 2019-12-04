@@ -48,6 +48,7 @@ import static org.apache.dubbo.remoting.utils.UrlUtils.getHeartbeat;
 import static org.apache.dubbo.remoting.utils.UrlUtils.getIdleTimeout;
 
 /**
+ * {@code ExchangeServer} 的默认实现
  * ExchangeServerImpl
  */
 public class HeaderExchangeServer implements ExchangeServer {

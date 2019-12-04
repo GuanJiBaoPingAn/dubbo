@@ -42,6 +42,7 @@ import static org.apache.dubbo.common.constants.CommonConstants.DEFAULT_TIMEOUT;
 import static org.apache.dubbo.common.constants.CommonConstants.TIMEOUT_KEY;
 
 /**
+ * {@code CompletableFuture} 在dubbo 中的实现
  * DefaultFuture.
  */
 public class DefaultFuture extends CompletableFuture<Object> {

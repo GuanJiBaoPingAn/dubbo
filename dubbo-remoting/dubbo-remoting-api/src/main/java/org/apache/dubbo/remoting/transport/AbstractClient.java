@@ -40,7 +40,7 @@ import static org.apache.dubbo.common.constants.CommonConstants.DEFAULT_CLIENT_T
 import static org.apache.dubbo.common.constants.CommonConstants.THREADPOOL_KEY;
 
 /**
- * AbstractClient
+ * AbstractClient 客户端抽象基类
  */
 public abstract class AbstractClient extends AbstractEndpoint implements Client {
 

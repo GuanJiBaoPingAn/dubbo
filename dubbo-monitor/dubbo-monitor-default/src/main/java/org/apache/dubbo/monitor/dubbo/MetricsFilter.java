@@ -123,6 +123,11 @@ public class MetricsFilter implements Filter {
         }
     }
 
+    /**
+     * 根据给定的{@link invocation} 返回方法名称
+     * @param invocation
+     * @return
+     */
     private String buildMethodName(Invocation invocation) {
         String methodName = RpcUtils.getMethodName(invocation);
         StringBuilder method = new StringBuilder(methodName);

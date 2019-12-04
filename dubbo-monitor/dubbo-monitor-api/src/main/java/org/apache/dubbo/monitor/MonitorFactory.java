@@ -21,6 +21,7 @@ import org.apache.dubbo.common.extension.Adaptive;
 import org.apache.dubbo.common.extension.SPI;
 
 /**
+ * 监视器工厂
  * MonitorFactory. (SPI, Singleton, ThreadSafe)
  */
 @SPI("dubbo")

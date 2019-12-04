@@ -24,6 +24,7 @@ import org.apache.dubbo.remoting.Endpoint;
 import org.apache.dubbo.remoting.RemotingException;
 
 /**
+ * 能够处理端点上通道事件的抽象基类，具体的处理代理给{@link AbstractPeer#handler}
  * AbstractPeer
  */
 public abstract class AbstractPeer implements Endpoint, ChannelHandler {

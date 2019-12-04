@@ -31,6 +31,8 @@ import java.io.InputStream;
 import java.io.OutputStream;
 
 /**
+ * {@link org.apache.dubbo.remoting.telnet.codec.TelnetCodec} 和
+ * {@link org.apache.dubbo.remoting.exchange.codec.ExchangeCodec} 的基类
  * Subclasses {@link org.apache.dubbo.remoting.telnet.codec.TelnetCodec} and {@link org.apache.dubbo.remoting.exchange.codec.ExchangeCodec}
  * both override all the methods declared in this class.
  */

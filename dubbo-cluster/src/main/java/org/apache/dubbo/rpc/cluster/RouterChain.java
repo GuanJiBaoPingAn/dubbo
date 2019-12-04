@@ -28,6 +28,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 /**
+ * 路由链
  * Router chain
  */
 public class RouterChain<T> {

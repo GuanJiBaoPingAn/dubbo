@@ -24,6 +24,7 @@ import java.util.Collections;
 import java.util.List;
 
 /**
+ * 协议
  * Protocol. (API/SPI, Singleton, ThreadSafe)
  */
 @SPI("dubbo")
@@ -53,6 +54,10 @@ public interface Protocol {
     <T> Exporter<T> export(Invoker<T> invoker) throws RpcException;
 
     /**
+     * 引用一个远程服务
+     * 1、当调用该方法（refer()）返回的Invoker 的invoke() 方法时，协议需要调用invoke()
+     * 2、协议需要实现refer() 返回的Invoker。
+     * 3、当url 中的check=false 时，实现不能抛出异常需要尝试恢复连接失败
      * Refer a remote service: <br>
      * 1. When user calls `invoke()` method of `Invoker` object which's returned from `refer()` call, the protocol
      * needs to correspondingly execute `invoke()` method of `Invoker` object <br>

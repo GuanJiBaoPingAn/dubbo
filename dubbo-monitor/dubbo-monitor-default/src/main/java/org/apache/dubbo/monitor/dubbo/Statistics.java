@@ -22,6 +22,7 @@ import org.apache.dubbo.monitor.MonitorService;
 import java.io.Serializable;
 
 /**
+ * 统计数据
  * Statistics. (SPI, Prototype, ThreadSafe)
  */
 public class Statistics implements Serializable {

@@ -37,6 +37,7 @@ import static org.apache.dubbo.remoting.Constants.CHARSET_KEY;
 import static org.apache.dubbo.remoting.Constants.DEFAULT_CHARSET;
 
 /**
+ * Telnet 编解码器
  * TelnetCodec
  */
 public class TelnetCodec extends TransportCodec {
@@ -60,6 +61,11 @@ public class TelnetCodec extends TransportCodec {
             new byte[]{-1, -12, -1, -3, 6} /* Linux Ctrl+C */,
             new byte[]{-1, -19, -1, -3, 6} /* Linux Pause */);
 
+    /**
+     * 获取通道中字符集属性，不存在则用默认
+     * @param channel
+     * @return
+     */
     private static Charset getCharset(Channel channel) {
         if (channel != null) {
             Object attribute = channel.getAttribute(CHARSET_KEY);

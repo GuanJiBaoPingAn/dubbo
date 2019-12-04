@@ -49,6 +49,7 @@ import static org.apache.dubbo.monitor.Constants.COUNT_PROTOCOL;
 import static org.apache.dubbo.rpc.Constants.INPUT_KEY;
 import static org.apache.dubbo.rpc.Constants.OUTPUT_KEY;
 /**
+ * 监视器过滤器
  * MonitorFilter. (SPI, Singleton, ThreadSafe)
  */
 @Activate(group = {PROVIDER, CONSUMER})
